@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video - MeTube</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="menu-btn"><i class="fas fa-bars"></i></button>
+            <div class="logo" onclick="window.location.href='index.html'">
+                <i class="fas fa-play-circle"></i>
+                <span>MeTube</span>
+            </div>
+        </div>
+        <div class="nav-center">
+            <div class="search-box">
+                <input type="text" placeholder="Search videos...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="icon-btn"><i class="fas fa-bell"></i></button>
+            <button class="icon-btn"><i class="fas fa-user-circle"></i></button>
+        </div>
+    </nav>
+
+    <div class="upload-container">
+        <h1>Upload Video</h1>
+        <form class="upload-form" id="uploadForm">
+            <div class="upload-area" id="uploadArea">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h3>Drag and drop video file</h3>
+                <p>or</p>
+                <input type="file" id="videoFile" accept="video/*" hidden>
+                <button type="button" class="select-file-btn" onclick="document.getElementById('videoFile').click()">
+                    Select File
+                </button>
+            </div>
+
+            <div class="upload-details" id="uploadDetails" style="display: none;">
+                <div class="form-group">
+                    <label for="videoTitleInput">Title</label>
+                    <input type="text" id="videoTitleInput" placeholder="Enter video title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="videoDescInput">Description</label>
+                    <textarea id="videoDescInput" rows="5" placeholder="Tell viewers about your video"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="thumbnailFile">Thumbnail</label>
+                    <input type="file" id="thumbnailFile" accept="image/*">
+                </div>
+
+                <div class="form-group">
+                    <label for="categorySelect">Category</label>
+                    <select id="categorySelect">
+                        <option value="music">Music</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="education">Education</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="sports">Sports</option>
+                        <option value="technology">Technology</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="window.location.href='index.html'">Cancel</button>
+                    <button type="submit" class="publish-btn">Publish</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="upload.js"></script>
+</body>
+</html>

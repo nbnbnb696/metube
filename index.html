@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeTube - Video Sharing Platform</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+            <div class="logo">
+                <i class="fas fa-play-circle"></i>
+                <span>MeTube</span>
+            </div>
+        </div>
+        <div class="nav-center">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search videos...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <button class="icon-btn" id="voiceSearchBtn" title="Voice search"><i class="fas fa-microphone"></i></button>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="icon-btn" id="createBtn" title="Create"><i class="fas fa-plus-square"></i></button>
+            <button class="icon-btn" id="notificationBtn" title="Notifications"><i class="fas fa-bell"></i><span class="badge" id="notifBadge">3</span></button>
+            <button class="icon-btn" id="userBtn" title="Account"><i class="fas fa-user-circle"></i></button>
+        </div>
+    </nav>
+    <div class="create-menu" id="createMenu" style="display:none;">
+        <div class="menu-item" onclick="window.location.href='src/pages/upload.html'"><i class="fas fa-video"></i> Upload video</div>
+        <div class="menu-item" onclick="alert('Go live')"><i class="fas fa-broadcast-tower"></i> Go live</div>
+        <div class="menu-item" onclick="alert('Create post')"><i class="fas fa-edit"></i> Create post</div>
+    </div>
+    <div class="notification-panel" id="notificationPanel" style="display:none;">
+        <h3>Notifications</h3>
+        <div class="notif-item"><i class="fas fa-user-plus"></i> <b>Tech Academy</b> uploaded: Advanced CSS Tricks</div>
+        <div class="notif-item"><i class="fas fa-comment"></i> <b>John Doe</b> replied to your comment</div>
+        <div class="notif-item"><i class="fas fa-thumbs-up"></i> Your video reached 1M views!</div>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-item active" data-filter="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </div>
+            <div class="sidebar-item" data-filter="shorts" onclick="window.location.href='src/pages/shorts.html'">
+                <i class="fas fa-film"></i>
+                <span>Shorts</span>
+            </div>
+            <div class="sidebar-item" data-filter="subscriptions">
+                <i class="fas fa-folder"></i>
+                <span>Subscriptions</span>
+            </div>
+            <hr>
+            <h4 class="sidebar-title">You <i class="fas fa-chevron-right"></i></h4>
+            <div class="sidebar-item" data-filter="channel" onclick="window.location.href='src/pages/channel.html'">
+                <i class="fas fa-user"></i>
+                <span>Your channel</span>
+            </div>
+            <div class="sidebar-item" data-filter="history">
+                <i class="fas fa-history"></i>
+                <span>History</span>
+            </div>
+            <div class="sidebar-item" data-filter="playlists" onclick="window.location.href='src/pages/playlist.html'">
+                <i class="fas fa-list"></i>
+                <span>Playlists</span>
+            </div>
+            <div class="sidebar-item" data-filter="videos">
+                <i class="fas fa-video"></i>
+                <span>Your videos</span>
+            </div>
+            <div class="sidebar-item" data-filter="watchlater">
+                <i class="fas fa-clock"></i>
+                <span>Watch Later</span>
+            </div>
+            <div class="sidebar-item" data-filter="liked">
+                <i class="fas fa-thumbs-up"></i>
+                <span>Liked Videos</span>
+            </div>
+            <hr>
+            <h4 class="sidebar-title">Subscriptions</h4>
+            <div class="sidebar-item"><i class="fas fa-user-circle"></i><span>Tech Academy</span></div>
+            <div class="sidebar-item"><i class="fas fa-user-circle"></i><span>Code Master</span></div>
+            <div class="sidebar-item"><i class="fas fa-user-circle"></i><span>Design Pro</span></div>
+            <div class="sidebar-item"><i class="fas fa-chevron-down"></i><span>Show more</span></div>
+            <hr>
+            <h4 class="sidebar-title">Explore</h4>
+            <div class="sidebar-item" data-filter="trending">
+                <i class="fas fa-fire"></i>
+                <span>Trending</span>
+            </div>
+            <div class="sidebar-item" data-filter="music">
+                <i class="fas fa-music"></i>
+                <span>Music</span>
+            </div>
+            <div class="sidebar-item" data-filter="gaming">
+                <i class="fas fa-gamepad"></i>
+                <span>Gaming</span>
+            </div>
+            <div class="sidebar-item" data-filter="news">
+                <i class="fas fa-newspaper"></i>
+                <span>News</span>
+            </div>
+            <div class="sidebar-item" data-filter="sports">
+                <i class="fas fa-trophy"></i>
+                <span>Sports</span>
+            </div>
+            <div class="sidebar-item" data-filter="learning">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Learning</span>
+            </div>
+            <hr>
+            <div class="sidebar-item"><i class="fas fa-cog"></i><span>Settings</span></div>
+            <div class="sidebar-item"><i class="fas fa-flag"></i><span>Report history</span></div>
+            <div class="sidebar-item"><i class="fas fa-question-circle"></i><span>Help</span></div>
+            <div class="sidebar-item"><i class="fas fa-comment-alt"></i><span>Send feedback</span></div>
+        </aside>
+
+        <main class="content" id="content">
+            <div class="filter-chips">
+                <button class="chip active" data-category="all">All</button>
+                <button class="chip" data-category="javascript">JavaScript</button>
+                <button class="chip" data-category="python">Python</button>
+                <button class="chip" data-category="css">CSS</button>
+                <button class="chip" data-category="react">React</button>
+                <button class="chip" data-category="nodejs">Node.js</button>
+                <button class="chip" data-category="database">Database</button>
+                <button class="chip" data-category="devops">DevOps</button>
+                <button class="chip" data-category="ai">AI/ML</button>
+                <button class="chip" data-category="mobile">Mobile</button>
+            </div>
+            <div class="video-grid" id="videoGrid"></div>
+        </main>
+    </div>
+
+    <script src="src/js/script.js"></script>
+</body>
+</html>

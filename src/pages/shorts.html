@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shorts - MeTube</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="menu-btn"><i class="fas fa-bars"></i></button>
+            <div class="logo" onclick="window.location.href='index.html'">
+                <i class="fas fa-play-circle"></i>
+                <span>MeTube</span>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="icon-btn"><i class="fas fa-search"></i></button>
+            <button class="icon-btn"><i class="fas fa-bell"></i></button>
+            <button class="icon-btn"><i class="fas fa-user-circle"></i></button>
+        </div>
+    </nav>
+
+    <div class="shorts-container">
+        <div class="short-video" id="shortVideo">
+            <video loop autoplay muted>
+                <source src="" type="video/mp4">
+            </video>
+            <div class="short-info">
+                <h3 id="shortTitle">Quick CSS Tip</h3>
+                <p id="shortChannel">Design Pro</p>
+            </div>
+            <div class="short-actions">
+                <button class="short-btn"><i class="fas fa-thumbs-up"></i><span>1.2K</span></button>
+                <button class="short-btn"><i class="fas fa-thumbs-down"></i><span>Dislike</span></button>
+                <button class="short-btn"><i class="fas fa-comment"></i><span>45</span></button>
+                <button class="short-btn"><i class="fas fa-share"></i><span>Share</span></button>
+                <button class="short-btn"><i class="fas fa-ellipsis-v"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="shorts.js"></script>
+</body>
+</html>

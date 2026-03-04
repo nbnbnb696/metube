@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Channel - MeTube</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="menu-btn"><i class="fas fa-bars"></i></button>
+            <div class="logo" onclick="window.location.href='index.html'">
+                <i class="fas fa-play-circle"></i>
+                <span>MeTube</span>
+            </div>
+        </div>
+        <div class="nav-center">
+            <div class="search-box">
+                <input type="text" placeholder="Search videos...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="icon-btn"><i class="fas fa-bell"></i></button>
+            <button class="icon-btn"><i class="fas fa-user-circle"></i></button>
+        </div>
+    </nav>
+
+    <div class="channel-banner"></div>
+    <div class="channel-header">
+        <div class="channel-avatar-large"><i class="fas fa-user-circle"></i></div>
+        <div class="channel-info-large">
+            <h1 id="channelName">Tech Academy</h1>
+            <div class="channel-stats">
+                <span id="channelHandle">@techacademy</span> • 
+                <span id="channelSubs">1.2M subscribers</span> • 
+                <span id="channelVideos">245 videos</span>
+            </div>
+            <p id="channelBio">Learn programming and web development</p>
+            <button class="subscribe-btn subscribed">Subscribed <i class="fas fa-bell"></i></button>
+        </div>
+    </div>
+
+    <div class="channel-tabs">
+        <button class="tab-btn active" data-tab="videos">Videos</button>
+        <button class="tab-btn" data-tab="shorts">Shorts</button>
+        <button class="tab-btn" data-tab="playlists">Playlists</button>
+        <button class="tab-btn" data-tab="community">Community</button>
+        <button class="tab-btn" data-tab="about">About</button>
+    </div>
+
+    <div class="channel-content">
+        <div class="video-grid" id="channelVideos"></div>
+    </div>
+
+    <script src="channel.js"></script>
+</body>
+</html>
