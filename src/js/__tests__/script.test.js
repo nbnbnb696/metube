@@ -90,4 +90,11 @@ describe('Home Page Script', () => {
     document.body.innerHTML = '';
     expect(() => renderVideos(videos)).not.toThrow();
   });
+
+  test('should handle undefined document', () => {
+    const originalDoc = global.document;
+    global.document = undefined;
+    expect(() => renderVideos(videos)).not.toThrow();
+    global.document = originalDoc;
+  });
 });

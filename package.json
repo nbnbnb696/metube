@@ -19,6 +19,6 @@
     "testEnvironment": "jsdom",
     "setupFilesAfterEnv": ["<rootDir>/jest.setup.js"],
     "testMatch": ["**/__tests__/**/*.js", "**/?(*.)+(spec|test).js"],
-    "collectCoverageFrom": ["src/js/**/*.js", "!src/js/**/*.test.js", "!src/js/video.js", "!src/js/services/**", "!src/js/utils/**"]
+    "collectCoverageFrom": ["src/js/**/*.js", "!src/js/**/*.test.js"]
   }
 }
